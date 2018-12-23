@@ -1,0 +1,172 @@
+{% extends 'layouts/user-layout.html' %}
+
+{% block title %}
+    Album
+{% endblock title %}}
+
+{% block content %}}
+    <div class="container-fluid">
+        <div id="main-content">
+            <div id="album-info">
+                <div id="album-title">{{ album }} <i class="fas fa-pencil-alt" id="title-edit"></i></div>
+                <input type="text" id="album-title-edit" name="title" value="Beach photography"> <i class="fas fa-check" id="title-update"></i>
+{#                <div id="album-desc">Here are few photography of beach <i class="fas fa-pencil-alt" id="desc-edit"></i></div>#}
+{#                <input type="text"  id="album-desc-edit" name="description" value="Here are few photography of beach"> <i class="fas fa-check" id="desc-update"></i>#}
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-bg-4 col-md-6 col-sm-6 col-xs-6" id="album-photo-info">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#automatic">Automatic</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#manual">Manual</a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <form>
+                        {{ form.hidden_tag() }}
+                        <div class="tab-content">
+                            <div class="tab-pane container active" id="automatic">
+                                <div class="form-group row">
+                                    {{ form.name.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.name(class="form-control", id='photoName')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.type.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.type(class="form-control", id='photoType')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.date.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.date(class="form-control", id='photoDate')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.height.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.height(class="form-control", id='photoHeight')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                     {{ form.width.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.width(class="form-control", id='photoWidth')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                    {{ form.size.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.size(class="form-control", id='photoSize')}}
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                     {{ form.corporation.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.corporation(class="form-control", id='photoDeviceCorporation')}}
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                     {{ form.model.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.model(class="form-control", id='photoDeviceModel')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                     {{ form.exposureTime.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.exposureTime(class="form-control", id='photoExposureTime')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                     {{ form.exposureProgram.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.exposureProgram(class="form-control", id='photoExposureProgram')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                     {{ form.focal.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.focal(class="form-control", id='photoFocalLength')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                     {{ form.flash.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.flash(class="form-control", id='photoFlashMode')}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container fade" id="manual">
+                                <form>
+                                <div class="form-group row">
+                                    {{ form.event.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.event(class="form-control", id='photoEventName')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.location.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.location(class="form-control", id='photoLocation')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.album.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.album(class="form-control", id='photoAlbum')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.weather.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.weather(class="form-control", id='photoWeather')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.group.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.group(class="form-control", id='photoGroup')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.people.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.people(class="form-control", id='photoPeople')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.tag.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.tag(class="form-control", id='photoTag')}}
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        {{ form.upload(class="btn btn-outline-success float-right") }}
+                        <button type="button" class="btn btn-outline-danger float-left">Reset</button>
+                    </form>
+                </div>
+                <div class="col-xl-8 col-bg-8 col-md-6 col-sm-6 col-xs-6">
+                    <div class="row" id="album-photos">
+                        {% for image in image_list %}
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-6 album">
+                            <img src="{{ url_for('static', filename='images/'+ album +'/'+image) }}" class="album-photo">
+{#                            <div class="album-info">#}
+{#                                <div class="album-name"><a href="#">Sea beach</a></div>#}
+{#                                <span class="album-option"><a href="#"><i class="fas fa-download" style="font-size:28px;"></i></a></span>#}
+{#                                <span class="album-option"><a href="#"><i class="fas fa-trash-alt" style="font-size:28px;"></i></a></span>#}
+{#                            </div>#}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

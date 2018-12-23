@@ -1,0 +1,209 @@
+{% extends 'layouts/user-layout.html' %}
+
+{% block title %}
+    Search
+{% endblock title %}}
+
+{% block content %}
+    <div class="container-fluid">
+        <div id="main-content">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-4" id="searched-photo-info">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#automatic">Automatic</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#manual">Manual</a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane container active" id="automatic">
+                                <div class="form-group row">
+                                    {{ form.name.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.name(class="form-control", id='photoName')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.type.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.type(class="form-control", id='photoType')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.date.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.date(class="form-control", id='photoDate')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.height.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.height(class="form-control", id='photoHeight')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                     {{ form.width.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.width(class="form-control", id='photoWidth')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                    {{ form.size.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.size(class="form-control", id='photoSize')}}
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                     {{ form.corporation.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.corporation(class="form-control", id='photoDeviceCorporation')}}
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                     {{ form.model.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.model(class="form-control", id='photoDeviceModel')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                     {{ form.exposureTime.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.exposureTime(class="form-control", id='photoExposureTime')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                     {{ form.exposureProgram.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.exposureProgram(class="form-control", id='photoExposureProgram')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                     {{ form.focal.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.focal(class="form-control", id='photoFocalLength')}}
+                                    </div>
+                                </div>
+                                 <div class="form-group row">
+                                     {{ form.flash.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.flash(class="form-control", id='photoFlashMode')}}
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="tab-pane container fade" id="manual">
+                                <form>
+                                <div class="form-group row">
+                                    {{ form.event.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.event(class="form-control", id='photoEventName')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.location.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.location(class="form-control", id='photoLocation')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.album.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.album(class="form-control", id='photoAlbum')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.weather.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.weather(class="form-control", id='photoWeather')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.group.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.group(class="form-control", id='photoGroup')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.people.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.people(class="form-control", id='photoPeople')}}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    {{ form.tag.label(class="col-sm-2 form-control-label") }}
+                                    <div class="col-sm-10">
+                                        {{ form.tag(class="form-control", id='photoTag')}}
+                                    </div>
+                                </div>
+                                </form>
+                        </div>
+                    </div>
+                    {{ form.upload(class="btn btn-outline-success float-right") }}
+                    <button type="button" class="btn btn-outline-danger float-left">Cancel</button>
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8" id="searched-photo-area">
+                    <div class="row">
+                        {% for x in range(10) %}
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                <a href="#"><img src="{{ url_for('static', filename='images/adil.jpg')}}" class="img-thumbnail img-responsive searched-photo" alt="Smiley face"></a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" id="search-section">
+                    <div class="form-group row">
+                        {{ form.searchTime.label(class="col-sm-2 form-control-label") }}
+                        <div class="col-sm-10">
+                            {{ form.searchTime(class="form-control", id='searchTime')}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        {{ form.searchEvent.label(class="col-sm-2 form-control-label") }}
+                        <div class="col-sm-10">
+                            {{ form.searchEvent(class="form-control", id='searchEvent')}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        {{ form.searchLocation.label(class="col-sm-2 form-control-label") }}
+                        <div class="col-sm-10">
+                            {{ form.searchLocation(class="form-control", id='searchLocation')}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        {{ form.searchWeather.label(class="col-sm-2 form-control-label") }}
+                        <div class="col-sm-10">
+                            {{ form.searchWeather(class="form-control", id='searchWeather')}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        {{ form.searchGroup.label(class="col-sm-2 form-control-label") }}
+                        <div class="col-sm-10">
+                            {{ form.searchGroup(class="form-control", id='searchGroup')}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        {{ form.searchAlbum.label(class="col-sm-2 form-control-label") }}
+                        <div class="col-sm-10">
+                            {{ form.searchAlbum(class="form-control", id='searchAlbum')}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        {{ form.searchDate.label(class="col-sm-2 form-control-label") }}
+                        <div class="col-sm-10">
+                            {{ form.searchDate(class="form-control", id='searchAlbum')}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        {{ form.searchTag.label(class="col-sm-2 form-control-label") }}
+                        <div class="col-sm-10">
+                            {{ form.searchTag(class="form-control", id='searchTag')}}
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-success float-right">New Filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

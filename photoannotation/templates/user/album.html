@@ -1,0 +1,37 @@
+{% extends 'layouts/user-layout.html' %}
+
+{% block title %}
+    Album
+{% endblock title %}}
+
+{% block content %}}
+    <div class="container-fluid">
+        <div id="main-content">
+            <div class="row">
+                <span class="mr-auto"><h2>Albums</h2></span>
+                <span class="ml-auto"><button class="btn btn-outline-success">Create new album</button></span>
+            </div>
+            <div class="row" id="album-section">
+                {% for dir in dir_list %}
+{#              <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6 col-xs-6 album">#}
+                    <div class="row album-files">
+                        <center><h2>{{ dir }}</h2></center>
+                        <br>
+                        {% for image in dir_list[dir] %}
+                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                                <img src="{{ url_for('static', filename= "images/"+image) }}" class="img-thumbnail album-photo">
+                            </div>
+    {#                    <div class="album-info">#}
+    {#                        <div class="album-name"><a href="{{ url_for('showAlbum', name=dir[0]) }}">{{ dir[0] }}</a></div>#}
+    {#                        <div class="photo-number">{{ dir[2] }} photos</div>#}
+    {#                        <span class="album-option"><a href="#"><i class="fas fa-download" style="font-size:28px;"></i></a></span>#}
+    {#                        <span class="album-option"><a href="#"><i class="fas fa-trash-alt" style="font-size:28px;"></i></a></span>#}
+    {#                    </div>#}
+                        {% endfor %}
+                    </div>
+                    <hr>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}}
